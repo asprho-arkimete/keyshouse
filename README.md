@@ -1,63 +1,49 @@
-🗝️ KeysHouse: AI Survival Game
-KeysHouse è un'esperienza di gioco innovativa basata su Intelligenza Artificiale, alimentata dal modello Flux.1 [dev]. Immergiti in una casa generata proceduralmente dall'IA, dove il tuo obiettivo è trovare le chiavi per fuggire mentre ti difendi da orde di zombie.
+🗝️ KeysHouse: AI Survival Horror
+KeysHouse è un survival game sperimentale che sfrutta la potenza di FLUX.2 [klein] 9B per generare l'intera esperienza visiva. Lo scopo del gioco è esplorare una casa generata proceduralmente dall'IA, trovare le 4 chiavi nascoste e fuggire prima di essere sopraffatti dagli zombie.
 
-Tutte le ambientazioni (location) e gli sprite di gioco vengono generati dinamicamente dall'IA per offrire un'esperienza visiva ogni volta unica.
+Tutte le immagini delle location e gli sprite di gioco vengono renderizzati in tempo reale dal modello FLUX, rendendo ogni partita visivamente unica.
 
-🚀 Requisiti e Installazione
-Segui questi passaggi per configurare correttamente l'ambiente di gioco. Si consiglia l'uso di una GPU NVIDIA con supporto CUDA 12.8.
+🛠️ Procedura di Installazione
+Segui attentamente questi passaggi per configurare l'ambiente di gioco (richiede GPU NVIDIA con supporto CUDA).
 
-1. Clonazione del Repository
-Apri il terminale e clona il progetto:
-
+1. Clonazione del Progetto
 Bash
 git clone https://github.com/asprho-arkimete/keyshouse.git
 cd keyshouse
-2. Estrazione delle Risorse Video
-Individua il file videos.part1.exe (o i file divisi) nella cartella principale ed eseguilo per estrarre i contenuti video necessari.
+2. Estrazione Risorse Video
+Estrai il file videos.part1.exe presente nella cartella principale per generare i contenuti video necessari al gioco.
 
-3. Setup dei Frame Zombie
-Scarica l'archivio zombie dalla sezione Releases del repository. Estrai il contenuto per ottenere la cartella frames_zombie e posizionala nella root del progetto.
+3. Setup Asset Zombie
+Scarica l'archivio zombie dalla sezione Releases e posiziona la cartella estratta frames_zombie nella directory principale del progetto.
 
-4. Download Modelli e LoRA
-Scarica i modelli LoRA necessari seguendo i link contenuti nel file lora_links.txt.
+4. Modelli LoRA
+Scarica i modelli LoRA necessari utilizzando i link forniti nel file lora_links.txt.
 
-Al primo avvio, il gioco scaricherà automaticamente il modello Flux.1 Dev (9B) se non presente.
-
-5. Configurazione Ambiente Python
-Crea e attiva un ambiente virtuale per gestire le dipendenze:
-
+5. Creazione Ambiente Virtuale
 Bash
 python -m venv vroom
-# Su Windows:
+# Attivazione:
 vroom\Scripts\activate
-# Su Linux/Mac:
-source vroom/bin/activate
-6. Installazione Dipendenze
-Installa PyTorch con supporto CUDA e tutte le librerie necessarie:
-
+6. Installazione Dipendenze e PyTorch
 Bash
 pip install torch torchvision --index-url https://download.pytorch.org/whl/cu128
 pip install -r requirements.txt
-🎨 Personalizzazione (Bonus)
-Prima di iniziare, puoi personalizzare i volti dei personaggi (bonus) nel gioco:
+🎭 Personalizzazione e Bonus
+Prima di avviare il gioco, puoi personalizzare i personaggi femminili (sistema bonus):
 
-Scegli le foto delle tue modelle o attrici preferite.
+Scegli le foto delle tue attrici o modelle preferite.
 
 Inseriscile nella cartella riferimenti_girls.
-Nota: La cartella è vuota per motivi di privacy, permettendoti di creare la tua esperienza personalizzata.
+Nota: La cartella originale è vuota per motivi di privacy; spetta all'utente popolarla per attivare le generazioni personalizzate.
 
-🕹️ Come Giocare
-Lo scopo è semplice ma impegnativo:
+🕹️ Gameplay
+Modello IA: Al primo avvio verrà inizializzato FLUX.2 [klein] 9B per la creazione delle ambientazioni.
 
-Esplora: Muoviti nelle stanze generate dall'IA Flux.
+Obiettivo: Trova le 4 chiavi nella stanza generata dall'IA.
 
-Trova: Recupera le 4 chiavi nascoste per sbloccare l'uscita.
-
-Sopravvivi: Difenditi dagli attacchi degli zombie durante la ricerca.
+Sopravvivenza: Difenditi dagli attacchi zombie mentre cerchi la via d'uscita.
 
 Avvio del Gioco
-Per iniziare la tua avventura, esegui:
-
 Bash
 python keyroom.py
 
